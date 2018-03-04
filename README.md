@@ -5,7 +5,7 @@
   <h4>Install</h4>
   <ul>
     <li>Clone with <code>git clone https://github.com/mistical2008/for-usb</code></li>
-    <li>Copi file <code>for-usb</code> to directory you desire</li>
+    <li>Copy file <code>for-usb</code> to directory you desire</li>
     <li>Add this directory to <code>$PATH</code> in <code>~/.bashrc</code></li>
     <li>Then just type in terminal <code>for-usb</code></li>
   </ul> 
