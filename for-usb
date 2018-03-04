@@ -24,6 +24,11 @@ This will take so much time for full wipe
 EOF
 read -p "Type Y for (yes) or N for (no): " answer;
 if [[ "$answer" == "Y" || "$answer" == "yes"  ]]; then
+	cat <<EOF
+
+Be ready to make a cup of coffe and watch a series of "Sillicon walley" :)
+
+EOF
 	sudo shred -v /dev/$device;
 fi
 # Read options
