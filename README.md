@@ -6,7 +6,7 @@
   <ul>
     <li>Clone with <code>git clone https://github.com/mistical2008/for-usb</code></li>
     <li>Copy file <code>for-usb</code> to directory you desire</li>
-    <li>Add this directory to <code>$PATH</code> in <code>~/.bashrc</code></li>
+    <li>Add this directory to <code>$PATH</code> in <code>~/.bashrc</code>, ex. <code>echo 'export PATH="$PATH:$HOME/Scripts" >> ~/.bashrc'</code></li>
     <li>Then just type in terminal <code>for-usb</code></li>
   </ul> 
 
