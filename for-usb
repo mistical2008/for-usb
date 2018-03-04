@@ -1,0 +1,46 @@
+#!/bin/bash
+# Read devices list
+lsblk;
+# Output warnings
+cat <<EOF
+
+FIRST READ:
+This script will wipe(optional) and format device you choose.
+
+========================== BE AWARE ===========================
+Be aware not to wipe wrong device, ex. system disk or your data.
+===============================================================
+
+EOF
+# Read device name
+echo 'Type device FROM LIST ABOVE without quotes ex. "sdc"';
+read -p "Device name: " device;
+sudo umount /dev/$device
+# Query for wipe and begin conditions
+cat <<EOF
+
+WILL WIPE NEEDED?
+This will take so much time for full wipe
+EOF
+read -p "Type Y for (yes) or N for (no): " answer;
+if [[ "$answer" == "Y" || "$answer" == "yes"  ]]; then
+	sudo shred -v /dev/$device;
+fi
+# Read options
+cat <<EOF
+
+CHOOSE OPTIONS
+EOF
+read -p "Type device label you desire: " label;
+# convert to uppercase
+label="${label^^}";
+# convert whitespaces to underscores
+label="${label// /_}"
+
+cat <<EOF
+
+Now your device have label $label
+EOF
+# Wait 2 sec and make fat32 fs
+sleep 2
+sudo mkdosfs -F 32 -I /dev/$device -n $label -v
